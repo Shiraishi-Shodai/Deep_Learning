@@ -9,11 +9,11 @@ from sympy import isprime
 """
 
 # 初期化したdfを生成
-def init_df(train_scope, divisor_data):
+def init_df(target_scope, divisor_data):
     columns = np.zeros(len(divisor_data))
     columns = [f"{i}の剰余" for i in divisor_data]
     columns.append("素数=1/合成数=0")
-    index = train_scope
+    index = target_scope
     return pd.DataFrame(columns=columns, index=index)
 
 # データフレーム1行分のデータを生成する
@@ -26,8 +26,8 @@ def make_df_row(i, divisor_data):
     return rowData
 
 # 学習用、またはテスト用のデータを生成する
-def makeData(train_scope, divisor_data):
-    df = init_df(train_scope, divisor_data)
+def makeData(target_scope, divisor_data):
+    df = init_df(target_scope, divisor_data)
     for i in df.index:
         df.loc[i, :] = make_df_row(i, divisor_data)
     return df
@@ -72,8 +72,7 @@ def main():
         if label == 1:
             prime_array.append(i)
 
-    print(f"素数リスト: {prime_array}")
-    print(test_df.head(10))
+    print(f"予測素数リスト: {prime_array}")
 
     # モデルの保存
     model.save("prime_classter.keras")
