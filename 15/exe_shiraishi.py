@@ -86,3 +86,4 @@ ax.plot_wireframe(ww1, ww2, w3, color='blue',linewidth=0.3)
 ax.scatter(w_history[:,0], w_history[:,1], w_history[:,2], color='red')
 plt.savefig("ackley.png")
 plt.show()
+
