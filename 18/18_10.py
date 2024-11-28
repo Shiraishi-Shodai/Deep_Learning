@@ -36,7 +36,12 @@ model = tf.keras.models.Sequential([
   tf.keras.layers.Dense(10)
 ])
 
+
 loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+
+# ワンホットエンコーディング
+# y_train = tf.one_hot(y_train, 10)
+# y_test = tf.one_hot(y_test, 10)
 # CategoricalCrossentropy ではラベルが ワンホット形式（例: [1, 0, 0, ..., 0]）であることを期待しています。
 # loss_fn = tf.keras.losses.CategoricalCrossentropy(from_logits=True)
 
