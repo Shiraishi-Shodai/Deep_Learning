@@ -1,0 +1,20 @@
+Step: 0k
+Time taken for 1000 steps: 718.46 sec
+
+Step: 1k
+Time taken for 1000 steps: 712.20 sec
+
+Step: 2k
+Time taken for 1000 steps: 721.91 sec
+
+Step: 3k
+Time taken for 1000 steps: 2622.52 sec
+
+Step: 4k
+Time taken for 1000 steps: 811.02 sec
+
+Step: 5k
+Time taken for 1000 steps: 1013.36 sec
+
+Step: 6k
+Time taken for 1000 steps: 839.62 sec
