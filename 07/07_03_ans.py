@@ -29,6 +29,7 @@ for w4 in np.arange(0.01, 0.95, 0.01):
         acc = fig_accuracy(0.5,X,y,weights,bias)
         if acc > 0.94:
             print(f"w4={w4},bias={bias} => Accuracy:{acc}")
+            break
 
 """
 [ 0.39443136  0.51327025 -2.93075043 -2.4170433 ]
