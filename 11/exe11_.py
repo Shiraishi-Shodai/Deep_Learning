@@ -62,11 +62,11 @@ for epoch in range(1,max_learning+1):
     loss.append(loss_func(w))
 
 plt.scatter(np.arange(max_learning),loss,color="green")
-plt.savefig("loss.png")
+# plt.savefig("loss.png")
 plt.show()
 
 y_pred = w[0] + w[1]* np.sin(3.1416*X/5) + w[2]* X
 plt.plot(X,y_pred,color="red")#予測曲線
 plt.scatter(X,y,color="blue") #与えられたCSVのデータ
-plt.savefig("pred.png")
+# plt.savefig("pred.png")
 plt.show()
