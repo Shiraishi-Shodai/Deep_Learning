@@ -12,6 +12,7 @@ w = np.array([4.0,2.7])
 
 for epoch in range(1,5500):
     grad =0
+    # 全行の勾配を加算
     for vec_x in df.to_numpy():
         x = vec_x[0]
         t = vec_x[1]
@@ -21,6 +22,8 @@ for epoch in range(1,5500):
     grad_norm = np.linalg.norm(grad, ord=2)
     grad_history.append(grad_norm)
     epoch_history.append(epoch)
+    error = np.mean((w[0] * df.iloc[:, 0] + w[1] - df.iloc[:, 1])**2)
+    print(f"Erro {error}")
     print(f'{epoch} th train : w_1= {w[0]}, w_2 = {w[1]}')
 
     if math.sqrt(grad[0]**2 + grad[1]**2)  < 0.05:
