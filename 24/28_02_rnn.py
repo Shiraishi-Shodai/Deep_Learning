@@ -16,6 +16,7 @@ os.environ["PYTHONHASHSEED"] = str(seed)
 
 #データの読み込み
 data = np.loadtxt("./sin_data.csv")
+# print(len(data)) # 3200
 plt.plot(data[:500])
 plt.show()
 
@@ -49,8 +50,10 @@ print(y_test.shape)
 #モデルの構築
 model_rnn = Sequential()  
 model_rnn.add(SimpleRNN(units=future_steps, input_shape=(history_steps,1),return_sequences=False))
+# 活性化関数を恒等関数とする
 model_rnn.add(Dense(future_steps,activation="linear"))  
-model_rnn.compile(optimizer = Adam(lr=0.001), loss="mean_squared_error",)
+# 損失関数は平均二条誤差
+model_rnn.compile(optimizer = Adam(learning_rate=0.001), loss="mean_squared_error",)
 
 #モデルの構造を表示する
 print(model_rnn.summary())
